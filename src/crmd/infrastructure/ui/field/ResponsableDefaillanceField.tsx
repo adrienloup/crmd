@@ -11,7 +11,7 @@ export const ResponsableDefaillanceField = ({ initialValue, onChange }: Responsa
 
   return (
     <div className={styles.field}>
-      <label htmlFor="resposableDefaillanceKey">Responsable défaillace</label>
+      <label htmlFor="resposableDefaillanceKey">Responsable défaillance</label>
       <select
         id="resposableDefaillanceKey"
         value={value}

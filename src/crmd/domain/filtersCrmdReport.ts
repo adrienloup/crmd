@@ -1,5 +1,5 @@
+import type { CrmdFiltersType } from '@/src/crmd/domain/CrmdFilters.ts';
 import type { CrmdReportType } from '@/src/crmd/domain/CrmdReport.ts';
-import type { CrmdFiltersType } from '@/src/crmd/infrastructure/ui/filters/CrmdFilters.ts';
 
 export function filterCrmdReports(reports: CrmdReportType[], filters: CrmdFiltersType) {
   return reports.filter((report) => {

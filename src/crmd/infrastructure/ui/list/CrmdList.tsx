@@ -5,7 +5,7 @@ import {
   statutCrmdLabel,
   typologieDEquipementLabel,
 } from '@/src/crmd/domain/CrmdReport.ts';
-import { filterCrmdReports } from '@/src/crmd/infrastructure/ui/filters/filtersCrmdReport.ts';
+import { filterCrmdReports } from '@/src/crmd/domain/filtersCrmdReport.ts';
 import { formatDate } from '@/src/shared/utils/formatDate.ts';
 import styles from '@/src/crmd/infrastructure/ui/list/CrmdList.module.scss';
 
@@ -18,15 +18,15 @@ export const CrmdList = () => {
 
   return (
     <section className={styles.list}>
-      {filteredReports.length ? (
+      {filteredReports?.length ? (
         <table aria-label="Liste des comptes-rendus matériels défectueux">
           <thead>
             <tr>
               <th>ID équipement</th>
-              <th>Typologie équipement</th>
+              <th>Typ. équip.</th>
               <th>Date de création</th>
               <th>Statut CRMD</th>
-              <th>Responsable défaillance</th>
+              <th>Res. déf.</th>
             </tr>
           </thead>
           <tbody>

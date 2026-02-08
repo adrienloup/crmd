@@ -1,12 +1,12 @@
+import { useMemo } from 'react';
 import { useCrmdState } from '@/src/crmd/application/useCrmd.ts';
+import { filterCrmdReports } from '@/src/crmd/domain/filtersCrmdReport.ts';
 import { CrmdChips } from '@/src/crmd/infrastructure/ui/chips/CrmdChips.tsx';
-import { filterCrmdReports } from '@/src/crmd/infrastructure/ui/filters/filtersCrmdReport.ts';
 import styles from '@/src/crmd/infrastructure/ui/results/CrmdResults.module.scss';
 
 export const CrmdResults = () => {
   const { reports, filters } = useCrmdState();
-
-  const total = filterCrmdReports(reports, filters).length;
+  const total = useMemo(() => filterCrmdReports(reports, filters).length, [reports, filters]);
 
   return (
     <section className={styles.results}>

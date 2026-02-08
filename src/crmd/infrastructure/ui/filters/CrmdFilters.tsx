@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useCrmdState, useCrmdDispatch } from '@/src/crmd/application/useCrmd.ts';
+import type { CrmdFiltersType } from '@/src/crmd/domain/CrmdFilters.ts';
 import type {
   ResposableDefaillanceType,
   StatutCrmdType,
@@ -9,7 +10,6 @@ import { IdPrmField } from '@/src/crmd/infrastructure/ui/field/IdPrmField.tsx';
 import { ResponsableDefaillanceField } from '@/src/crmd/infrastructure/ui/field/ResponsableDefaillanceField.tsx';
 import { StatutCrmdField } from '@/src/crmd/infrastructure/ui/field/StatutCrmdField.tsx';
 import { TypologieDEquipementField } from '@/src/crmd/infrastructure/ui/field/TypologieDEquipementField.tsx';
-import type { CrmdFiltersType } from '@/src/crmd/infrastructure/ui/filters/CrmdFilters.ts';
 import styles from '@/src/crmd/infrastructure/ui/filters/CrmdFilters.module.scss';
 
 export const CrmdFilters = () => {
