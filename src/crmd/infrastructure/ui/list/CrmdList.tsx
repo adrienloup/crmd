@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
-import { filterCrmdReports } from '@/src/crmd/domain/services/filtersCrmdReport.ts';
-import { useCrmdState } from '@/src/crmd/interface/useCrmd.ts';
-import styles from '@/src/crmd/ui/list/CrmdList.module.scss';
+import { useCrmdState } from '@/src/crmd/application/useCrmd.ts';
+import { filterCrmdReports } from '@/src/crmd/infrastructure/ui/filters/filtersCrmdReport.ts';
+import styles from '@/src/crmd/infrastructure/ui/list/CrmdList.module.scss';
 
 export const CrmdList = () => {
   const { reports, filters } = useCrmdState();
@@ -12,7 +12,7 @@ export const CrmdList = () => {
 
   return (
     <section className={styles.list}>
-      {reports.length ? (
+      {filteredReports.length ? (
         <table aria-label="Liste des comptes-rendus matériels défectueux">
           <thead>
             <tr>
@@ -21,8 +21,8 @@ export const CrmdList = () => {
           </thead>
           <tbody>
             {filteredReports.map((report) => (
-              <tr key={report.id}>
-                <td>{report.id}</td>
+              <tr key={report.idPrm}>
+                <td>{report.idPrm}</td>
               </tr>
             ))}
           </tbody>

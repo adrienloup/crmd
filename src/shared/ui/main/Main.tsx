@@ -1,4 +1,4 @@
-import type { ChildrenType } from '@/src/shared/types/Children.ts';
+import type { ChildrenType } from '@/src/shared/type/Children.ts';
 import styles from '@/src/shared/ui/main/Main.module.scss';
 
 export const Main = ({ children }: { children: ChildrenType }) => {

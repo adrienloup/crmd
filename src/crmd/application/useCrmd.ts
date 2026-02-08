@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { CrmdStateContext, CrmdDispatchContext } from '@/src/crmd/interface/CrmdContext.tsx';
+import { CrmdStateContext, CrmdDispatchContext } from '@/src/crmd/application/CrmdContext.tsx';
 
 export function useCrmdState() {
   const ctx = useContext(CrmdStateContext);

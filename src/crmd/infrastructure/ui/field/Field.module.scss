@@ -1,0 +1,36 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.25rem 1.5rem 1.5rem;
+  border-top: 1px solid #e8e8e8;
+
+  label {
+    color: #757575;
+  }
+
+  input {
+    padding: 0.5rem;
+    background: transparent;
+    border: 1px solid #c8c8c8;
+    border-radius: 4px;
+    color: #757575;
+
+    &::placeholder {
+      color: #757575;
+    }
+  }
+
+  select {
+    padding: 0.5rem;
+    background: transparent;
+    border: 1px solid #c8c8c8;
+    border-radius: 4px;
+    color: #757575;
+    appearance: base-select;
+
+    &::placeholder {
+      color: #757575;
+    }
+  }
+}

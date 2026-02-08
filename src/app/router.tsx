@@ -1,6 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
-import { CrmdProvider } from '@/src/crmd/interface/CrmdProvider.tsx';
-import { CrmdPage } from '@/src/crmd/ui/CrmdPage.tsx';
+import { CrmdProvider } from '@/src/crmd/application/CrmdProvider.tsx';
+import { CrmdPage } from '@/src/crmd/infrastructure/ui/CrmdPage.tsx';
 
 export const router = createBrowserRouter([
   {

@@ -15,7 +15,7 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
   font-synthesis: style;
   font-weight: 700;
   font-size: 14px;
@@ -23,13 +23,15 @@ body {
 }
 
 input,
+select,
 button {
-  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
   font-weight: 700;
   font-size: 14px;
 }
 
 button {
+  color: #191919;
   cursor: pointer;
 }
 

@@ -12,7 +12,7 @@
 }
 
 .title {
-  padding: 1rem;
+  padding: 1.5rem;
   line-height: 2rem;
   font-size: 1.5rem;
 }
@@ -24,41 +24,16 @@
   overflow-y: auto;
 }
 
-.filter {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  padding: 1rem;
-  border-top: 1px solid #f3f3f3;
-
-  label {
-    color: #757575;
-  }
-
-  input {
-    padding: 0.5rem;
-    background: transparent;
-    border: 1px solid #c8c8c8;
-    border-radius: 4px;
-    color: #757575;
-
-    &::placeholder {
-      color: #757575;
-    }
-  }
-}
-
 .buttons {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding: 1rem;
+  padding: 1.5rem;
   box-shadow: 0 -10px 10px -10px #f1f1f1;
 
   button {
     padding: 0.5rem;
     border: 1px solid #c8c8c8;
     border-radius: 4px;
-    color: #757575;
   }
 }

@@ -1,5 +1,5 @@
-import type { CrmdFiltersType } from '@/src/crmd/domain/model/CrmdFilters.ts';
-import type { CrmdReportType } from '@/src/crmd/domain/model/CrmdReport.ts';
+import type { CrmdReportType } from '@/src/crmd/domain/CrmdReport.ts';
+import type { CrmdFiltersType } from '@/src/crmd/infrastructure/ui/filters/CrmdFilters.ts';
 
 export interface CrmdStateType {
   reports: CrmdReportType[];

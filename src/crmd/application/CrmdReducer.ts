@@ -1,4 +1,4 @@
-import type { CrmdDispatchType, CrmdStateType } from '@/src/crmd/domain/model/Crmd.ts';
+import type { CrmdDispatchType, CrmdStateType } from '@/src/crmd/application/Crmd.ts';
 
 /*
   Reducer plus simple.
@@ -20,7 +20,7 @@ export const crmdReducer = (state: CrmdStateType, action: CrmdDispatchType): Crm
     case 'CLEAR_FILTER': {
       const filters = { ...state.filters };
       delete filters[action.filter];
-      return { ...state, filters: filters };
+      return { ...state, filters };
     }
     case 'RESET_FILTERS':
       return { ...state, filters: {} };

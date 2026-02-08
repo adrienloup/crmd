@@ -1,7 +1,7 @@
 import { useEffect, useReducer } from 'react';
-import { crmdReducer } from '@/src/crmd/interface/CrmdReducer.ts';
-import { reports } from '@/src/crmd/repository/CrmdRepository.ts';
-import type { ChildrenType } from '@/src/shared/types/Children.ts';
+import { crmdReducer } from '@/src/crmd/application/CrmdReducer.ts';
+import { reports } from '@/src/crmd/infrastructure/repository/CrmdRepository.ts';
+import type { ChildrenType } from '@/src/shared/type/Children.ts';
 import { CrmdStateContext, CrmdDispatchContext } from './CrmdContext';
 
 /*
