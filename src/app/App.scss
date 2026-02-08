@@ -15,17 +15,29 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: Arial, sans-serif;
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
   font-synthesis: style;
-  font-weight: normal;
+  font-weight: 700;
   font-size: 14px;
   color: #191919;
+}
+
+input,
+button {
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+button {
+  cursor: pointer;
 }
 
 #app {
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
-  min-height: 100vh;
+  overflow-y: auto;
+  height: 100vh;
   background-color: #fafafa;
 }

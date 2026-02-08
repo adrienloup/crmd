@@ -1,8 +1,15 @@
+:root {
+  --header-height: 60px;
+}
+
 .header {
   position: sticky;
   top: 0;
   z-index: 2;
-  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  height: var(--header-height);
+  padding: 0 2rem;
   background-color: #fff;
   border-bottom: 1px solid #f3f3f3;
 }

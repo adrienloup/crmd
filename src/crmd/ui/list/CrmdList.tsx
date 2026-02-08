@@ -1,26 +1,35 @@
-import { useCrmd } from '@/src/crmd/state/useCrmd.ts';
+import { useMemo } from 'react';
+import { filterCrmdReports } from '@/src/crmd/domain/services/filtersCrmdReport.ts';
+import { useCrmdState } from '@/src/crmd/interface/useCrmd.ts';
 import styles from '@/src/crmd/ui/list/CrmdList.module.scss';
 
 export const CrmdList = () => {
-  const crmd = useCrmd();
-  console.log('log>reports>', crmd);
+  const { reports, filters } = useCrmdState();
 
-  return crmd.reports?.length ? (
-    <div className={styles.list}>
-      <table aria-label="Liste des comptes-rendus matériels défectueux">
-        <thead>
-          <tr>
-            <th>Numéro de série</th>
-            <th>Typologie</th>
-            <th>Date de création</th>
-            <th>Statut CRMD</th>
-            <th>Réponse</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-    </div>
-  ) : (
-    <div>Aucune donnée</div>
+  const filteredReports = useMemo(() => {
+    return filterCrmdReports(reports, filters);
+  }, [reports, filters]);
+
+  return (
+    <section className={styles.list}>
+      {reports.length ? (
+        <table aria-label="Liste des comptes-rendus matériels défectueux">
+          <thead>
+            <tr>
+              <th>ID équipement</th>
+            </tr>
+          </thead>
+          <tbody>
+            {filteredReports.map((report) => (
+              <tr key={report.id}>
+                <td>{report.id}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      ) : (
+        <div>Aucune donnée</div>
+      )}
+    </section>
   );
 };
