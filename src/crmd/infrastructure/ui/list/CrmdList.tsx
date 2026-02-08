@@ -1,6 +1,12 @@
 import { useMemo } from 'react';
 import { useCrmdState } from '@/src/crmd/application/useCrmd.ts';
+import {
+  resposableDefaillanceLabel,
+  statutCrmdLabel,
+  typologieDEquipementLabel,
+} from '@/src/crmd/domain/CrmdReport.ts';
 import { filterCrmdReports } from '@/src/crmd/infrastructure/ui/filters/filtersCrmdReport.ts';
+import { formatDate } from '@/src/shared/utils/formatDate.ts';
 import styles from '@/src/crmd/infrastructure/ui/list/CrmdList.module.scss';
 
 export const CrmdList = () => {
@@ -17,12 +23,20 @@ export const CrmdList = () => {
           <thead>
             <tr>
               <th>ID équipement</th>
+              <th>Typologie équipement</th>
+              <th>Date de création</th>
+              <th>Statut CRMD</th>
+              <th>Responsable défaillance</th>
             </tr>
           </thead>
           <tbody>
             {filteredReports.map((report) => (
               <tr key={report.idPrm}>
                 <td>{report.idPrm}</td>
+                <td>{typologieDEquipementLabel[report.typologieDEquipement]}</td>
+                <td>{formatDate(report.dateDeCreation)}</td>
+                <td>{statutCrmdLabel[report.statutCrmd]}</td>
+                <td>{resposableDefaillanceLabel[report.resposableDefaillance]}</td>
               </tr>
             ))}
           </tbody>

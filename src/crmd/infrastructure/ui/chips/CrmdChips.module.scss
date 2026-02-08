@@ -1,0 +1,11 @@
+.chips {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 0.5rem;
+}
+
+.chip {
+  padding: 0.25rem 0.5rem;
+  border: 1px solid #c8c8c8;
+  border-radius: 10px;
+}

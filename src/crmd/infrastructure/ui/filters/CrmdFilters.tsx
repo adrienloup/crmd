@@ -1,7 +1,13 @@
 import { useState } from 'react';
 import { useCrmdState, useCrmdDispatch } from '@/src/crmd/application/useCrmd.ts';
-import type { TypologieDEquipementType } from '@/src/crmd/domain/CrmdReport.ts';
+import type {
+  ResposableDefaillanceType,
+  StatutCrmdType,
+  TypologieDEquipementType,
+} from '@/src/crmd/domain/CrmdReport.ts';
 import { IdPrmField } from '@/src/crmd/infrastructure/ui/field/IdPrmField.tsx';
+import { ResponsableDefaillanceField } from '@/src/crmd/infrastructure/ui/field/ResponsableDefaillanceField.tsx';
+import { StatutCrmdField } from '@/src/crmd/infrastructure/ui/field/StatutCrmdField.tsx';
 import { TypologieDEquipementField } from '@/src/crmd/infrastructure/ui/field/TypologieDEquipementField.tsx';
 import type { CrmdFiltersType } from '@/src/crmd/infrastructure/ui/filters/CrmdFilters.ts';
 import styles from '@/src/crmd/infrastructure/ui/filters/CrmdFilters.module.scss';
@@ -25,6 +31,8 @@ export const CrmdFilters = () => {
 
   const idPrmKey = state.filters.idPrm ?? `idPrm-${version}`;
   const typologieDEquipementKey = state.filters.typologieDEquipement ?? `typologieDEquipement-${version}`;
+  const statutCrmdKey = state.filters.statutCrmd ?? `statutCrmd-${version}`;
+  const resposableDefaillanceKey = state.filters.resposableDefaillance ?? `resposableDefaillance-${version}`;
 
   return (
     <section className={styles.filters}>
@@ -49,7 +57,26 @@ export const CrmdFilters = () => {
               }))
             }
           />
-          <div className={styles.field}>2</div>
+          <StatutCrmdField
+            key={statutCrmdKey}
+            initialValue={state.filters.statutCrmd ?? ''}
+            onChange={(value) =>
+              setFilters((prev) => ({
+                ...prev,
+                statutCrmd: (value || undefined) as StatutCrmdType | undefined,
+              }))
+            }
+          />
+          <ResponsableDefaillanceField
+            key={resposableDefaillanceKey}
+            initialValue={state.filters.resposableDefaillance ?? ''}
+            onChange={(value) =>
+              setFilters((prev) => ({
+                ...prev,
+                resposableDefaillance: (value || undefined) as ResposableDefaillanceType | undefined,
+              }))
+            }
+          />
         </div>
         <div className={styles.buttons}>
           <button type="submit">Valider</button>
